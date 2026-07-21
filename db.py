@@ -9,6 +9,9 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 
 database = MongoClient(DATABASE_URL)
 
+db = database.get_default_database()
+books_collection = db["books"]
+user_collection = db["users"]
 
 
 def ping():
